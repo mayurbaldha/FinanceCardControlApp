@@ -8,6 +8,7 @@
  * @format
  */
 
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import {
   SafeAreaView,
@@ -16,16 +17,16 @@ import {
   StyleSheet,
   Text,
   useColorScheme,
-  View,
+  View
 } from 'react-native';
-
 import {
   Colors,
   DebugInstructions,
   Header,
   LearnMoreLinks,
-  ReloadInstructions,
+  ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen';
+
 
 const Section: React.FC<{
   title: string;
@@ -63,6 +64,8 @@ const App = () => {
   };
 
   return (
+    <NavigationContainer>
+   
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
@@ -90,6 +93,7 @@ const App = () => {
         </View>
       </ScrollView>
     </SafeAreaView>
+    </NavigationContainer>
   );
 };
 
