@@ -1,9 +1,11 @@
+import { useNavigation } from '@react-navigation/native';
 import React from "react";
-import { Dimensions, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { Dimensions, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import ColorScheme from "../../constants/uiScheme";
 const { width, height } = Dimensions.get('window');
 const ModalScreen = () => {
-
+const navigation = useNavigation();
+const [text, setText] = React.useState<number>();
     return (
         <View style={styles.container}>
             <View style={styles.topArea}>
@@ -24,7 +26,10 @@ const ModalScreen = () => {
                         <View style={styles.currencyArea}>
                             <Text style={styles.currency}>{'S$'}</Text>
                         </View>
-                        <TextInput value="5000" style={styles.textInputStyle} />
+                        <TextInput keyboardType='numeric'
+                         value={String(text)}
+                         onChangeText={(text) => setText(Number(text))}
+                         style={styles.textInputStyle} />
                     </View>
 
                     <View>
@@ -34,14 +39,14 @@ const ModalScreen = () => {
                     </View>
                     
                     <View style={styles.bottomBtns}>
-                        <Text style={styles.bottombtnText}>{'5000'}</Text>
-                        <Text style={styles.bottombtnText}>{'10000'}</Text>
-                        <Text style={styles.bottombtnText}>{'20000'}</Text>
+                        <Pressable onPress={()=>setText(5000)}><Text style={styles.bottombtnText}>{'5000'}</Text></Pressable>
+                        <Pressable onPress={()=>setText(10000)}><Text style={styles.bottombtnText}>{'10000'}</Text></Pressable>
+                        <Pressable onPress={()=>setText(20000)}><Text style={styles.bottombtnText}>{'20000'}</Text></Pressable>
                     </View>
-                    <View style={styles.bottomButtonView}>
+                    <Pressable style={styles.bottomButtonView} onPress={()=>navigation.goBack()}>
                         <Text style={styles.bottomButtonText}>Save
                         </Text>
-                    </View>
+                    </Pressable>
                 </ScrollView>
                 
             </View>
