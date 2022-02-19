@@ -62,3 +62,21 @@ Kindly install all packages as per guidelines of each package's official repo
 pod install
 ```
 Before running ios App on Device, necessary certificate setup from Apple developer Account is required.
+
+
+<!-- RUNNING -->
+## Running
+
+After you install the application you can run it with one of the several npm run scripts.
+
+```sh
+npx react-native run-android
+npx react-native run-android --variant=release
+npx react-native run-ios
+npm run ios-device
+npm run ios-device-release
+npm run ios-iphone-se
+npm run ios-release
+```
+
+There are several other NPM scripts that can be useful during development. Check package.json for details.
