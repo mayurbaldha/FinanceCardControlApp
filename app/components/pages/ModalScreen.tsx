@@ -5,7 +5,7 @@ import ColorScheme from "../../constants/uiScheme";
 const { width, height } = Dimensions.get('window');
 const ModalScreen = () => {
 const navigation = useNavigation();
-const [text, setText] = React.useState<number>();
+const [text, setText] = React.useState<number>(0);
     return (
         <View style={styles.container}>
             <View style={styles.topArea}>
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
     bottomBtns: {
         flexDirection: 'row',
         flex: 1,
+        justifyContent: 'space-between',
     },
     bottombtnText: {
         flex: 1,
@@ -113,14 +114,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
         backgroundColor: ColorScheme.primary,
-        opacity: 0.3,
+        opacity: 0.2,
         fontFamily: 'AvenirNext-DemiBold',
-        color: ColorScheme.primary,
+        color: ColorScheme.secondary,
         margin: 12,
-        fontSize: 12,
+        fontSize: 14,
         lineHeight: 16,
-        borderRadius: 5,
-        height: 56,
+        borderRadius: 15,
+        height: 56,overflow: 'hidden',
     },
     textInputStyle: {
         fontFamily: 'AvenirNext-DemiBold',
