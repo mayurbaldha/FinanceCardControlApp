@@ -80,3 +80,7 @@ npm run ios-release
 ```
 
 There are several other NPM scripts that can be useful during development. Check package.json for details.
+
+
+![Alt text](/screen1.png?raw=true "Screen1")
+![Alt text](/screen2.png?raw=true "Screen2")
